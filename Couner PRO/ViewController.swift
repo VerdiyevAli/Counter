@@ -16,12 +16,6 @@ class ViewController: UIViewController {
     var count = 0
     var clickHistory: [String] = []
     override func viewDidLoad() {
-        super.viewDidLoad()
-        super.viewDidLoad()
-                textLable.layer.cornerRadius = 10
-                        textLable.clipsToBounds = true
-        historyLable.layer.cornerRadius = 6
-            historyLable.clipsToBounds = true
     }
 
     @IBAction func minusButton(_ sender: UIButton) {
