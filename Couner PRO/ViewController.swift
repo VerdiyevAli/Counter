@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var historyLable: UITextView!
     @IBOutlet weak var plusButton: UIButton!
@@ -27,14 +28,14 @@ class ViewController: UIViewController {
         if count > 0 {
             count -= 1
             textLable.text = String(count)
-            updateClickHistory("Minus 1 ")
+            updateClickHistory("Minus 1")
         }
     }
     
     @IBAction func plusButton(_ sender: Any) {
         count += 1
             textLable.text = String(count)
-        updateClickHistory("Plus 1 ")
+        updateClickHistory("Plus 1")
 
     }
     func updateClickHistory(_ action: String) {
@@ -42,6 +43,12 @@ class ViewController: UIViewController {
         let historyItem = "\(timestamp): \(action)"
         clickHistory.append(historyItem)
         historyLable.text = clickHistory.joined(separator: "\n")
+    }
+    @IBAction func resetButton(_ sender: Any) {
+        count = 0
+                textLable.text = String(count)
+                clickHistory.removeAll()
+                historyLable.text = ""
     }
 }
 
